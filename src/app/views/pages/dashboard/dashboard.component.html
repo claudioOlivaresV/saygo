@@ -1,0 +1,68 @@
+<div class="d-flex justify-content-between align-items-center flex-wrap grid-margin">
+  <div>
+    <h4 class="mb-3 mb-md-0">Obras</h4>
+  </div>
+  <div class="d-flex align-items-center flex-wrap text-nowrap">
+  
+    <button type="button" class="btn btn-primary btn-icon-text mb-2 mb-md-0">
+      <i class="btn-icon-prepend" data-feather="plus" appFeatherIcon></i>
+      Nueva Obra
+    </button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12 col-xl-12 stretch-card">
+    <div class="row flex-grow">
+      <ng-container *ngFor="let item of data; let i = index; first as isFirst">
+        <div class="col-md-4 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-baseline">
+                <h6 class="card-title mb-0 ">{{item.nombre}}</h6>
+                <div ngbDropdown class="mb-2">
+                  <button ngbDropdownToggle class="btn p-0 no-dropdown-toggle-icon" type="button" id="dropdownMenuButton">
+                    <i class="icon-lg text-muted pb-3px" data-feather="more-horizontal" appFeatherIcon></i>
+                  </button>
+                  <div ngbDropdownMenu aria-labelledby="dropdownMenuButton">
+                    <a ngbDropdownItem class="d-flex align-items-center" [routerLink]="'/dashboard/detalle'"  (click)="false"><i data-feather="eye" appFeatherIcon class="icon-sm mr-2"></i> <span class="">Ver detalle</span></a>
+                    <a ngbDropdownItem class="d-flex align-items-center" href="" (click)="false"><i data-feather="edit-2" appFeatherIcon class="icon-sm mr-2"></i> <span class="">Editar</span></a>
+                    <a ngbDropdownItem class="d-flex align-items-center" href="" (click)="false"><i data-feather="trash" appFeatherIcon class="icon-sm mr-2"></i> <span class="">Eliminar</span></a>
+  
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                 
+                    <p class="card-text text-muted mb-1">Presupuesto: ${{item.presupuesto}}</p>
+                    <p class="text-success mb-1">
+                      <span>Ingresos: </span>
+                      <span class="text-success">${{item.ingresos}}</span>
+                      <i data-feather="arrow-up" appFeatherIcon class="icon-sm mb-1 text-success"></i>
+                    </p>
+                    <p class="text-danger mb-1">
+                      <span>Gastos: </span>
+                      <span class="text-danger">${{item.gastos}}</span>
+                      <i data-feather="arrow-down" appFeatherIcon class="icon-sm mb-1 text-danger"></i>
+                    </p>
+                    <button type="button" class="btn btn-outline-primary btn-block btn-icon-text text-center d-flex justify-content-center mt-3" [routerLink]="'/dashboard/detalle'">
+                      <div>
+                        <i data-feather="eye" appFeatherIcon class="icon-sm mr-2"></i>
+                        Ver detalle
+  
+                      </div>
+                    </button>
+  
+                </div>
+            
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+
+     
+    </div>
+  </div>
+</div> <!-- row -->
