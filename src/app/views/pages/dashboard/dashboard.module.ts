@@ -15,6 +15,9 @@ import { ChartsModule } from 'ng2-charts';
 import { DashboardComponent } from './dashboard.component';
 import { DetalleObraComponent } from './detalle-obra/detalle-obra.component';
 import { PresupuestoComponent } from './presupuesto/presupuesto.component';
+import { PartidasComponent } from './partidas/partidas.component';
+import { MaterialComponent } from './material/material.component';
+import { FacturaComponent } from './factura/factura.component';
 
 const routes: Routes = [
   {
@@ -28,7 +31,7 @@ const routes: Routes = [
 ]
 
 @NgModule({
-  declarations: [DashboardComponent, DetalleObraComponent, PresupuestoComponent],
+  declarations: [DashboardComponent, DetalleObraComponent, PresupuestoComponent, PartidasComponent, MaterialComponent, FacturaComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),

@@ -9,34 +9,28 @@
     <li [ngbNavItem]="1">
       <a ngbNavLink>Presupuesto</a>
       <ng-template ngbNavContent>
-        <h6 class="mb-2">Home</h6>
-        <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth
-          master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica.</p>
+        
+            <app-presupuesto></app-presupuesto>
+
+        
       </ng-template>
     </li>
-    <li [ngbNavItem]="2">
+    <!-- <li [ngbNavItem]="2">
       <a ngbNavLink>Partidas</a>
       <ng-template ngbNavContent>
-        <h6 class="mb-2">Profile</h6>
-        <p>Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko
-          farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts
-          ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit.</p>
+          <app-partidas></app-partidas>
       </ng-template>
-    </li>
+    </li> -->
     <li [ngbNavItem]="3">
       <a ngbNavLink>Material</a>
       <ng-template ngbNavContent>
-        <h6 class="mb-2">Contact</h6>
-        <p>Sed commodo, leo at suscipit dictum, quam est porttitor sapien, eget sodales nibh elit id diam. Nulla facilisi.
-          Donec egestas ligula vitae odio interdum aliquet. Duis lectus turpis, luctus eget tincidunt eu, congue et odio.
-          Duis pharetra et nisl at faucibus.</p>
+          <app-material></app-material>
       </ng-template>
     </li>
     <li [ngbNavItem]="4">
-      <a ngbNavLink >Pagos</a>
+      <a ngbNavLink >Facturas</a>
       <ng-template ngbNavContent>
-        <h6 class="mb-2">Disabled content</h6>
-        <p>Sed commodo, leo at suscipit dictum, quam est porttitor sapien, eget sodales nibh elit id diam.</p>
+          <app-factura></app-factura>
       </ng-template>
     </li>
   </ul>
