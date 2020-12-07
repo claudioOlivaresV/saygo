@@ -18,6 +18,9 @@ import { PresupuestoComponent } from './presupuesto/presupuesto.component';
 import { PartidasComponent } from './partidas/partidas.component';
 import { MaterialComponent } from './material/material.component';
 import { FacturaComponent } from './factura/factura.component';
+import {MatExpansionModule} from '@angular/material/expansion';
+import { HttpClientModule } from '@angular/common/http';
+
 
 const routes: Routes = [
   {
@@ -41,7 +44,9 @@ const routes: Routes = [
     NgbDatepickerModule,
     NgApexchartsModule,
     ChartsModule,
-    NgbModule
+    NgbModule,
+    MatExpansionModule,
+    HttpClientModule
   ]
 })
 export class DashboardModule { }
