@@ -1,1 +1,160 @@
-<p>presupuesto works!</p>
+<ng-container *ngIf="!status.loading">
+  <div class="col-12  grid-margin stretch-card px-0">
+    <div class="card ">
+      <div class="card-body py-2">
+  
+  
+        <div class="row   text-center  text-muted tx-12"> 
+          <div class="col-3 mb-2 pt-2 text-left  border-right border-light d-flex justify-content-center">
+            <div>
+              <label class="tx-11 font-weight-bold mb-0 text-uppercase"> Presupuesto inicial</label>
+              <p class="text-muted"> <i class="mdi mdi-wallet"></i> $250.000.000</p>
+  
+            </div>
+  
+  
+          </div>
+          <div class="col-3 mb-2 pt-2 text-left  border-right border-light d-flex justify-content-center">
+            <div>
+              <label class="tx-11 font-weight-bold mb-0 text-uppercase"> Costos</label>
+              <p class="text-muted"> <i class="mdi mdi-wallet"></i> $4.018.000
+              </p>
+  
+            </div>
+  
+  
+          </div>
+          <div class="col-3 mb-2 pt-2 text-left  border-right border-light d-flex justify-content-center">
+            <div>
+              <label class="tx-11 font-weight-bold mb-0 text-uppercase"> Costos UF</label>
+              <p class="text-muted"> <i class="mdi mdi-wallet"></i> 140,0 </p>
+  
+            </div>
+  
+  
+          </div>
+          <div class="col-3 mb-2 pt-2 text-left   border-light d-flex justify-content-center">
+            <div>
+              <label class="tx-11 font-weight-bold mb-0 text-uppercase"> Diferencia</label>
+              <p class="text-muted"> <i class="mdi mdi-wallet"></i> 2709,6</p>
+  
+            </div>
+  
+  
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  
+  </div>
+  <div>
+    <div class="row ">
+      <div class="col-7">
+        <h6 class="card-title text-muted "><i data-feather="flag" appFeatherIcon></i> Items: 6</h6>
+      </div>
+  
+      <div class="col-3">
+        <input type="text" class="form-control" id="navbarForm" placeholder="Filtrar aquí..." name="filter">
+  
+      </div>
+      <div class="col-2">
+        <button type="button"
+          class="btn btn-outline-primary btn-block btn-icon-text text-center d-flex justify-content-center">
+          <div>
+            Administrar Items
+  
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-12 col-lg-5  grid-margin stretch-card">
+  
+  
+      <div class="row w-100 px-0 mx-0 ">
+  
+        <mat-accordion class="w-100">
+          <ng-container *ngFor="let item of items; let i = index">
+            <div class="col-12 mt-3 px-0">
+            
+                  <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="acordion sobras" >
+                    <mat-expansion-panel-header class="h-100 py-3">
+                      <div class="w-100">
+                        <div class="d-flex align-items-center justify-content-between mb-2">
+                          <h6 class="card-title mb-2"> {{item.nombre}} </h6>
+                        </div>
+                        <div class="row">
+                          <div class="mt-1 col">
+                            <label class="tx-11 font-weight-bold mb-0 text-uppercase">Presupuesto:</label>
+                            <p class="text-muted"> {{item.presu}}</p>
+                          </div>
+                          <div class="mt-1 col">
+                            <label class="tx-11 font-weight-bold mb-0 text-uppercase">Costo:</label>
+                            <p class="text-muted">{{item.costo}}</p>
+                          </div>
+                          <div class="mt-1 col">
+                            <label class="tx-11 font-weight-bold mb-0 text-uppercase">Costo UF:</label>
+                            <p class="text-muted">${{item.costoUF}}</p>
+                          </div>
+                          <div class="mt-1 col">
+                            <label class="tx-11 font-weight-bold mb-0 text-uppercase">Diferencia:</label>
+                            <p class="text-muted">{{item.diferencia}}</p>
+                          </div>
+  
+                        </div>
+  
+                      </div>
+                    </mat-expansion-panel-header>
+                    <p>I'm visible because I am open</p>
+                  </mat-expansion-panel>
+  
+                </div>
+   
+  
+          </ng-container>
+        </mat-accordion>
+    </div>
+  
+  </div>
+  
+  <div class="col-12 col-lg-7">
+    <div class="card mt-3">
+      <div class="card-body">
+        <h6 class="card-title"><i class="mdi mdi-chart-line"></i>
+          Gráfico</h6>
+  
+        <canvas baseChart [datasets]="groupedBarChartData" [labels]="groupedBarChartLabels"
+          [options]="groupedBarChartOptions" [chartType]="groupedBarChartType">
+        </canvas>
+  
+      </div>
+    </div>
+  </div>
+  
+  </div>
+  
+  
+  
+  
+  <div class="email-attachments">
+    <div class="title">Documentos <span>(3 archivos)</span></div>
+    <ul>
+      <li><a href="" (click)="false"><span class="feather icon-file"></span> Reference.zip <span
+            class="text-muted tx-11">(5.10 MB)</span></a></li>
+      <li><a href="" (click)="false"><span class="feather icon-file"></span> Instructions.zip <span
+            class="text-muted tx-11">(3.15 MB)</span></a></li>
+      <li><a href="" (click)="false"><span class="feather icon-file"></span> Team-list.pdf <span
+            class="text-muted tx-11">(4.5 MB)</span></a></li>
+    </ul>
+  </div>
+
+</ng-container>
+<ng-container *ngIf="status.loading">
+  <div class="spinner-wrapper d-block">
+    <div class="spinner"></div>
+  </div>
+
+</ng-container>

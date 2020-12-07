@@ -1,44 +1,62 @@
 <nav aria-label="breadcrumb mb-3">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Obra 1</li>
-    </ol>
-  </nav>
+  <div class="row pb-4">
+    <div class="col-md-3 col-xl-6">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Obra 1 </li>
+      </ol>
+    </div>
+    <div class="col-md-9 col-xl-6 text-muted text-right tx-10 ">
+      <div class="row text-center text-md-right">
+        <div class="col-6 col-md-3 mt-2 mt-md-0">
+          <label class=" font-weight-bold mb-0 text-uppercase"> Fecha inicio de obra</label>
+          <p class="text-muted"> <i data-feather="calendar" class="iconDate" appFeatherIcon></i> 10/11/2020</p>
+    
+        </div>
+        <div class="col-6 col-md-3 mt-2 mt-md-0">
+          <label class=" font-weight-bold mb-0 text-uppercase"> Fecha fin de obra</label>
+          <p class="text-muted"> <i data-feather="calendar" class="iconDate" appFeatherIcon></i> 10/03/2021</p>
+
+        </div>
+        <div class="col-6 col-md-3 mt-2 mt-md-0">
+          <label class=" font-weight-bold mb-0 text-uppercase"> Jefe de obra</label>
+          <p class="text-muted"><i data-feather="user-check" class="iconDate" appFeatherIcon></i> Oscar Villegass</p>
+
+        </div>
+        <div class="col-6 col-md-3 mt-2 mt-md-0">
+          <label class=" font-weight-bold mb-0 text-uppercase"> Supervisor</label>
+          <p class="text-muted"> <i data-feather="user" class="iconDate" appFeatherIcon></i>  Juan Lorenzo</p>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
 
 <ul ngbNav #fillJustifyNav="ngbNav" class="nav-tabs nav-fill">
-    <li [ngbNavItem]="1">
-      <a ngbNavLink>Presupuesto</a>
-      <ng-template ngbNavContent>
-        <h6 class="mb-2">Home</h6>
-        <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth
-          master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica.</p>
-      </ng-template>
-    </li>
-    <li [ngbNavItem]="2">
-      <a ngbNavLink>Partidas</a>
-      <ng-template ngbNavContent>
-        <h6 class="mb-2">Profile</h6>
-        <p>Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko
-          farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts
-          ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit.</p>
-      </ng-template>
-    </li>
-    <li [ngbNavItem]="3">
-      <a ngbNavLink>Material</a>
-      <ng-template ngbNavContent>
-        <h6 class="mb-2">Contact</h6>
-        <p>Sed commodo, leo at suscipit dictum, quam est porttitor sapien, eget sodales nibh elit id diam. Nulla facilisi.
-          Donec egestas ligula vitae odio interdum aliquet. Duis lectus turpis, luctus eget tincidunt eu, congue et odio.
-          Duis pharetra et nisl at faucibus.</p>
-      </ng-template>
-    </li>
-    <li [ngbNavItem]="4">
-      <a ngbNavLink >Pagos</a>
-      <ng-template ngbNavContent>
-        <h6 class="mb-2">Disabled content</h6>
-        <p>Sed commodo, leo at suscipit dictum, quam est porttitor sapien, eget sodales nibh elit id diam.</p>
-      </ng-template>
-    </li>
-  </ul>
-  
-  <div [ngbNavOutlet]="fillJustifyNav" class="border border-top-0 p-3"></div>
+  <li [ngbNavItem]="1">
+    <a ngbNavLink>Presupuesto</a>
+    <ng-template ngbNavContent>
+
+      <app-presupuesto></app-presupuesto>
+
+
+    </ng-template>
+  </li>
+
+  <li [ngbNavItem]="3">
+    <a ngbNavLink>Material</a>
+    <ng-template ngbNavContent>
+      <app-material></app-material>
+    </ng-template>
+  </li>
+  <li [ngbNavItem]="4">
+    <a ngbNavLink>Facturas</a>
+    <ng-template ngbNavContent>
+      <app-factura></app-factura>
+    </ng-template>
+  </li>
+</ul>
+
+<div [ngbNavOutlet]="fillJustifyNav" class="border border-top-0 p-3"></div>

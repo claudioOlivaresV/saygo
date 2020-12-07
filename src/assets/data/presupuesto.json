@@ -1,0 +1,62 @@
+[
+    {
+        "nombre": "INSTALACIÓN DE FAENAS",
+        "presupuesto:": 53.0,
+        "costo": 0,
+        "costoUF": 0,
+        "diferencia": 0,
+        "presu": 53.0
+    },
+    {
+        "nombre": "TRAZADO Y LIMPIEZA",
+        "presupuesto:": 35.8,
+        "costo": 0,
+        "costoUF": 0,
+        "diferencia": 35.8,
+        "presu": 35.8
+    },
+    {
+        "nombre": "OBRA GRUESA",
+        "presupuesto:": 1030.9,
+        "costo": 0,
+        "costoUF": 0,
+        "diferencia": 1030.9,
+        "presu": 1030.9
+    }, 
+    {
+        "nombre": "TERMINACIONES",
+        "presupuesto:": 729.8,
+        "costo": 0,
+        "costoUF": 0,
+        "diferencia": 729.8,
+        "presu": 729.8
+    }, 
+    {
+        "nombre": "PROYECTO ELECTRICO",
+        "presupuesto:": 104.4,
+        "costo": 0,
+        "costoUF": 0,
+        "diferencia": 104.4,
+        "presu": 104.4
+    }, 
+    {
+        "nombre": "PROYECTO SANITARIO",
+        "presupuesto:": 85.9,
+        "costo": 0,
+        "costoUF": 0,
+        "diferencia": 85.9,
+        "presu": 85.9
+
+    }, 
+    {
+        "nombre": "ADICIONALES Y OTROS",
+        "presupuesto:": 809.9,
+        "costo": 4018000,
+        "costoUF": 140.0,
+        "diferencia": 669.9,
+        "presu": 809.9
+    }
+
+
+    
+]

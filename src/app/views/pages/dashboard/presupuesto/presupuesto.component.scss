@@ -1,0 +1,10 @@
+.iconDate {
+    width: 12px !important;
+}
+::ng-deep .mat-expansion-indicator::after {
+    display: none;
+}
+.sobras{
+    box-shadow: 0 0 10px 0 rgba(183, 192, 206, 0.2) !important;
+    -webkit-box-shadow: 0 0 10px 0 rgba(183, 192, 206, 0.2) !important;
+}
