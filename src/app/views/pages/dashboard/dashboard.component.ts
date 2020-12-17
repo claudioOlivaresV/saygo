@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { ApexAxisChartSeries, ApexNonAxisChartSeries, ApexGrid, ApexChart, ApexXAxis, ApexYAxis, ApexMarkers, ApexStroke, ApexLegend, ApexResponsive, ApexTooltip, ApexFill, ApexDataLabels, ApexPlotOptions, ApexTitleSubtitle } from 'ng-apexcharts';
 
-import { NgbDateStruct, NgbCalendar } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDateStruct, NgbCalendar, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 // Ng2-charts
 import { ChartOptions, ChartType, ChartDataSets, RadialChartOptions } from 'chart.js';
@@ -10,6 +10,7 @@ import { Label, Color, SingleDataSet } from 'ng2-charts';
 
 // Progressbar.js
 import ProgressBar from 'progressbar.js';
+import { NuevaObraComponent } from './nueva-obra/nueva-obra.component';
 
 export type apexChartOptions = {
   series: ApexAxisChartSeries;
@@ -70,9 +71,24 @@ export class DashboardComponent implements OnInit {
     }
   ]
 
-  constructor() {}
+  constructor(private modalService: NgbModal) {}
 
   ngOnInit(): void {
+  }
+  nuevaObra() {
+    const client = {
+      isEdit: false,
+      data: null,
+    }
+    const modalRef = this.modalService.open(NuevaObraComponent, {size: 'lg', scrollable: true,  backdrop: 'static',
+    keyboard: false});
+    modalRef.componentInstance.client = client;
+    modalRef.result.then((result) => {
+      if (result) {
+        // this.tryAgain();
+      }
+    });
+
   }
 
 }

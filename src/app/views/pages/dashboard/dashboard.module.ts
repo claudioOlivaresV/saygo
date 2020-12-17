@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { FeahterIconModule } from 'src/app/core/feather-icon/feather-icon.module';
 import { NgbDropdownModule, NgbDatepickerModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -20,6 +20,9 @@ import { MaterialComponent } from './material/material.component';
 import { FacturaComponent } from './factura/factura.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { HttpClientModule } from '@angular/common/http';
+import { NuevaObraComponent } from './nueva-obra/nueva-obra.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+
 
 
 const routes: Routes = [
@@ -34,7 +37,7 @@ const routes: Routes = [
 ]
 
 @NgModule({
-  declarations: [DashboardComponent, DetalleObraComponent, PresupuestoComponent, PartidasComponent, MaterialComponent, FacturaComponent],
+  declarations: [DashboardComponent, DetalleObraComponent, PresupuestoComponent, PartidasComponent, MaterialComponent, FacturaComponent, NuevaObraComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
@@ -46,7 +49,10 @@ const routes: Routes = [
     ChartsModule,
     NgbModule,
     MatExpansionModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    MatDatepickerModule
+
   ]
 })
 export class DashboardModule { }

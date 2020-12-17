@@ -12,6 +12,13 @@ import { ErrorPageComponent } from './views/pages/error-page/error-page.componen
 
 import { HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
 import { HttpClientModule } from '@angular/common/http';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatNativeDateModule } from '@angular/material/core';
+
+
+
 
 @NgModule({
   declarations: [
@@ -23,9 +30,15 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     BrowserAnimationsModule,
     LayoutModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDatepickerModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatNativeDateModule,
+
   ],
   providers: [
+    MatDatepickerModule,
     AuthGuard,
     {
       provide: HIGHLIGHT_OPTIONS, // https://www.npmjs.com/package/ngx-highlightjs

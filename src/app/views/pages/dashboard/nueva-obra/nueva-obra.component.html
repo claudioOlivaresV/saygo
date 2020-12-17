@@ -1,0 +1,139 @@
+<div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">Nueva Obra</h5>
+    <button type="button" class="close" aria-label="Close" (click)="closeModal()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <ng-container>
+        <form class="forms-sample" [formGroup]="form">
+
+
+            <div class="row d-flex justify-content-center">
+                <div class="col-10">
+                    <div class="row ">
+                        <div class="col-12 col-md-6">
+
+                            <div class="form-group">
+                                <label for="exampleInputEmail2" class="col-sm-12 col-form-label">Nombre Obra</label>
+                                <div class="col-12">
+                                    <input type="text" class="form-control" id="exampleInputEmail2" autocomplete="off"
+                                        placeholder="" formControlName="nombre"
+                                        [ngClass]="{ 'is-invalid': form.controls.nombre.invalid && form.controls.nombre.touched}">
+                                    <div *ngIf="form.controls.nombre.invalid" class="invalid-feedback">
+                                        <p class="text-danger mt-1">Dato Obligatorio</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-12 col-md-6">
+
+                            <div class="form-group">
+                                <label for="exampleInputEmail2" class="col-sm-12 col-form-label">Fecha Inicio</label>
+                                <div class="col-12 input-group">
+                                    <!-- <div class="input-group-prepend">
+                                                 <span class="input-group-text py-0" id="inputGroupPrepend"><i data-feather="calendar" appFeatherIcon></i></span>
+                                      </div> -->
+                                    <!-- <div class="input-group">
+                                        <input class="form-control" placeholder="yyyy-mm-dd" formControlName="fecha"
+                                               name="dp" ngbDatepicker #d="ngbDatepicker">
+                                        <div class="input-group-append">
+                                          <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+                                        </div>
+                                      </div> -->
+                                    <input type="text" class="form-control" autocomplete="off" placeholder=""
+                                        formControlName="fecha"
+                                        [ngClass]="{ 'is-invalid': form.controls.fecha.invalid && form.controls.fecha.touched}"
+                                        type="date">
+                                    <div *ngIf="form.controls.fecha.invalid" class="invalid-feedback">
+                                        <p class="text-danger mt-1">Dato Obligatorio</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <div class="form-group">
+                                <label for="exampleInputEmail2" class="col-sm-12 col-form-label">Fecha fin</label>
+                                <div class="col-12">
+                                    <input type="text" class="form-control" autocomplete="off" placeholder=""
+                                        formControlName="fechaFin"
+                                        [ngClass]="{ 'is-invalid': form.controls.fechaFin.invalid && form.controls.fechaFin.touched}"
+                                        type="date">
+                                    <div *ngIf="form.controls.fechaFin.invalid" class="invalid-feedback">
+                                        <p class="text-danger mt-1">Dato Obligatorio</p>
+                                    </div>
+                                </div>
+                                <!-- <input type="text" class="form-control" id="exampleInputEmail2" autocomplete="off"
+                                    placeholder="" formControlName="fechaFin"
+                                    [ngClass]="{ 'is-invalid': form.controls.fechaFin.invalid && form.controls.fechaFin.touched}">
+                                <div *ngIf="form.controls.fechaFin.invalid" class="invalid-feedback">
+                                    <p class="text-danger mt-1">Dato Obligatorio</p>
+                                </div> -->
+                            </div>
+                            </div>
+                        
+                
+                    <div class="col-12 col-md-6">
+                        <div class="form-group">
+                            <label for="exampleInputEmail2" class="col-sm-12 col-form-label">Jefe de obra</label>
+                            <div class="col-12">
+                                <input type="text" class="form-control" id="exampleInputEmail2" autocomplete="off"
+                                    placeholder="" formControlName="jefeObra"
+                                    [ngClass]="{ 'is-invalid': form.controls.jefeObra.invalid && form.controls.jefeObra.touched}">
+                                <div *ngIf="form.controls.jefeObra.invalid" class="invalid-feedback">
+                                    <p class="text-danger mt-1">Dato Obligatorio</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <div class="form-group">
+                            <label for="exampleInputPassword2" class="col-sm-12 col-form-label">Supervisor</label>
+                            <div class="col-12">
+                                <input type="text" class="form-control" id="exampleInputPassword2" autocomplete="off"
+                                    placeholder="" formControlName="supervisor"
+                                    [ngClass]="{ 'is-invalid': form.controls.supervisor.invalid && form.controls.supervisor.touched}">
+                                <div *ngIf="form.controls.supervisor.invalid" class="invalid-feedback">
+                                    <p class="text-danger mt-1">Dato Obligatorio, Ingrese un correo válido</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+</div>
+
+</form>
+
+</ng-container>
+<!-- <ng-container *ngIf="statusType.loading">
+        <div class="spinner-wrapper d-block bg-white h-100">
+          <div class="spinner"></div>
+        </div>
+      </ng-container> -->
+</div>
+<div class="modal-footer">
+    <button class="btn btn-light" (click)="closeModal()">Cerrar</button>
+    <button type="submit" class="btn btn-primary mr-2" (click)="save(form.value)"
+        [disabled]="form.invalid || status.loading">
+        <ng-container *ngIf="status.loading">
+            <span class="spinner-grow spinner-grow-sm mr-1" role="status" aria-hidden="true"></span>
+            <span>Cargando</span>
+        </ng-container>
+        <ng-container *ngIf="!status.loading">
+            Guardar
+        </ng-container>
+
+    </button>
+</div>

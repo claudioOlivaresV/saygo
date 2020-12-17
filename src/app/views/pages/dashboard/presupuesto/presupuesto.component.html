@@ -1,42 +1,41 @@
-<ng-container *ngIf="!status.loading">
+<ng-container *ngIf="!status.loading && !status.error">
   <div class="col-12  grid-margin stretch-card px-0">
     <div class="card ">
       <div class="card-body py-2">
   
   
         <div class="row   text-center  text-muted tx-12"> 
-          <div class="col-3 mb-2 pt-2 text-left  border-right border-light d-flex justify-content-center">
+          <div class="col-6 col-md-3 mb-2 pt-2 text-left  border-right border-light d-flex justify-content-center">
             <div>
               <label class="tx-11 font-weight-bold mb-0 text-uppercase"> Presupuesto inicial</label>
-              <p class="text-muted"> <i class="mdi mdi-wallet"></i> $250.000.000</p>
+              <p class="text-muted"> <i class="mdi mdi-wallet"></i> {{presupuesto.presupuestoInicial}}</p>
   
             </div>
   
   
           </div>
-          <div class="col-3 mb-2 pt-2 text-left  border-right border-light d-flex justify-content-center">
+          <div class="col-6 col-md-3 mb-2 pt-2 text-left  border-md-right border-light d-flex justify-content-center">
             <div>
               <label class="tx-11 font-weight-bold mb-0 text-uppercase"> Costos</label>
-              <p class="text-muted"> <i class="mdi mdi-wallet"></i> $4.018.000
+              <p class="text-muted"> <i class="mdi mdi-wallet"></i> {{presupuesto.costos}}
               </p>
-  
             </div>
   
   
           </div>
-          <div class="col-3 mb-2 pt-2 text-left  border-right border-light d-flex justify-content-center">
+          <div class="col-6 col-md-3 mb-2 pt-2 text-left  border-right border-light d-flex justify-content-center">
             <div>
               <label class="tx-11 font-weight-bold mb-0 text-uppercase"> Costos UF</label>
-              <p class="text-muted"> <i class="mdi mdi-wallet"></i> 140,0 </p>
+              <p class="text-muted"> <i class="mdi mdi-wallet"></i> {{presupuesto.costoUF}} </p>
   
             </div>
   
   
           </div>
-          <div class="col-3 mb-2 pt-2 text-left   border-light d-flex justify-content-center">
+          <div class="col-6 col-md-3 mb-2 pt-2 text-left   border-light d-flex justify-content-center">
             <div>
               <label class="tx-11 font-weight-bold mb-0 text-uppercase"> Diferencia</label>
-              <p class="text-muted"> <i class="mdi mdi-wallet"></i> 2709,6</p>
+              <p class="text-muted"> <i class="mdi mdi-wallet"></i> {{presupuesto.diferencia}}</p>
   
             </div>
   
@@ -50,15 +49,20 @@
   </div>
   <div>
     <div class="row ">
-      <div class="col-7">
-        <h6 class="card-title text-muted "><i data-feather="flag" appFeatherIcon></i> Items: 6</h6>
+      <div class="col-4 col-md-8 col-lg-5">
+        <h6 class="card-title text-muted "><i data-feather="flag" appFeatherIcon></i> Items: {{items.length}}</h6>
       </div>
   
-      <div class="col-3">
-        <input type="text" class="form-control" id="navbarForm" placeholder="Filtrar aquí..." name="filter">
+      <div class="d-none d-lg-block col-md-6 col-lg-4">
+        <div class="email-search">
+          <div class="input-group input-search">
+            <input class="form-control" type="text" placeholder="Filtrar aquí..."><span class="input-group-btn">
+            <button class="btn btn-outline-secondary" type="button"><i class="feather icon-search"></i></button></span>
+          </div>
+        </div>
   
       </div>
-      <div class="col-2">
+      <div class="col-8 col-md-4 col-lg-3">
         <button type="button"
           class="btn btn-outline-primary btn-block btn-icon-text text-center d-flex justify-content-center">
           <div>
@@ -66,6 +70,15 @@
   
           </div>
         </button>
+      </div>
+      <div class="d-block d-lg-none mt-2 col-12">
+        <div class="email-search">
+          <div class="input-group input-search">
+            <input class="form-control" type="text" placeholder="Filtrar aquí..."><span class="input-group-btn">
+            <button class="btn btn-outline-secondary" type="button"><i class="feather icon-search"></i></button></span>
+          </div>
+        </div>
+  
       </div>
     </div>
   </div>
@@ -87,15 +100,15 @@
                           <h6 class="card-title mb-2"> {{item.nombre}} </h6>
                         </div>
                         <div class="row">
-                          <div class="mt-1 col">
+                          <div class="mt-1 col-4">
                             <label class="tx-11 font-weight-bold mb-0 text-uppercase">Presupuesto:</label>
                             <p class="text-muted"> {{item.presu}}</p>
                           </div>
-                          <div class="mt-1 col">
+                          <div class="mt-1 col-2 col-md">
                             <label class="tx-11 font-weight-bold mb-0 text-uppercase">Costo:</label>
                             <p class="text-muted">{{item.costo}}</p>
                           </div>
-                          <div class="mt-1 col">
+                          <div class="mt-1 col-4 col-md">
                             <label class="tx-11 font-weight-bold mb-0 text-uppercase">Costo UF:</label>
                             <p class="text-muted">${{item.costoUF}}</p>
                           </div>
@@ -108,7 +121,47 @@
   
                       </div>
                     </mat-expansion-panel-header>
-                    <p>I'm visible because I am open</p>
+                    <hr/>
+                    <ng-container *ngFor="let item of item.items; let i = index; let last = last">
+                      <div class="w-100">
+                        <div class="d-flex align-items-center justify-content-between mb-2">
+                          <h6 class="card-title mb-2"> {{item.descripcion}} </h6>
+                        </div>
+                        <div class="row">
+                          <div class="mt-1 col-4">
+                            <label class="tx-11 font-weight-bold mb-0 text-uppercase">Unidad:</label>
+                            <p class="text-muted"> {{item.unidad === null ? '-' : item.unidad}}</p>
+                          </div>
+                          <div class="mt-1 col-4">
+                            <label class="tx-11 font-weight-bold mb-0 text-uppercase">Cantidad:</label>
+                            <p class="text-muted">{{item.cantidad}}</p>
+                          </div>
+                          <div class="mt-1 col-4">
+                            <label class="tx-11 font-weight-bold mb-0 text-uppercase">P. Unitario:</label>
+                            <p class="text-muted">${{item.precioUnitario}}</p>
+                          </div>
+                          <div class="mt-1 col-4">
+                            <label class="tx-11 font-weight-bold mb-0 text-uppercase">P.U UF:</label>
+                            <p class="text-muted">{{item.puUf === null ? '-' : item.puUf}}</p>
+                          </div>
+                          <div class="mt-1 col-4">
+                            <label class="tx-11 font-weight-bold mb-0 text-uppercase">Sub Total UF:</label>
+                            <p class="text-muted">{{item.subtotalUf}}</p>
+                          </div>
+                          <div class="mt-1 col-4">
+                            <label class="tx-11 font-weight-bold mb-0 text-uppercase">Total UF:</label>
+                            <p class="text-muted">{{item.totalUF}}</p>
+                          </div>
+  
+                        </div>
+  
+                      </div>
+                      <ng-container *ngIf="!last">
+                        <hr/>
+
+                      </ng-container>
+
+                    </ng-container>
                   </mat-expansion-panel>
   
                 </div>
@@ -157,4 +210,17 @@
     <div class="spinner"></div>
   </div>
 
+</ng-container>
+<ng-container *ngIf="status.error && !status.loading">
+
+  <div class="col-md-12 stretch-card">
+    <div class="card">
+        <div class="card-body d-flex justify-content-center">
+            <div class="col-12 text-center">
+                <h6 class="card-title">Error, servicio no disponible</h6>
+                <button type="button" class="btn btn-primary btn-icon-text" (click)="tryAgain()">Volver a intentar</button>
+            </div>
+      </div>
+    </div>
+  </div>
 </ng-container>

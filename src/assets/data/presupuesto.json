@@ -1,62 +1,220 @@
-[
-    {
-        "nombre": "INSTALACIÓN DE FAENAS",
-        "presupuesto:": 53.0,
-        "costo": 0,
-        "costoUF": 0,
-        "diferencia": 0,
-        "presu": 53.0
-    },
-    {
-        "nombre": "TRAZADO Y LIMPIEZA",
-        "presupuesto:": 35.8,
-        "costo": 0,
-        "costoUF": 0,
-        "diferencia": 35.8,
-        "presu": 35.8
-    },
-    {
-        "nombre": "OBRA GRUESA",
-        "presupuesto:": 1030.9,
-        "costo": 0,
-        "costoUF": 0,
-        "diferencia": 1030.9,
-        "presu": 1030.9
-    }, 
-    {
-        "nombre": "TERMINACIONES",
-        "presupuesto:": 729.8,
-        "costo": 0,
-        "costoUF": 0,
-        "diferencia": 729.8,
-        "presu": 729.8
-    }, 
-    {
-        "nombre": "PROYECTO ELECTRICO",
-        "presupuesto:": 104.4,
-        "costo": 0,
-        "costoUF": 0,
-        "diferencia": 104.4,
-        "presu": 104.4
-    }, 
-    {
-        "nombre": "PROYECTO SANITARIO",
-        "presupuesto:": 85.9,
-        "costo": 0,
-        "costoUF": 0,
-        "diferencia": 85.9,
-        "presu": 85.9
+{
+    "presupuestoInicial": 250000000,
+    "costos": 4018000,
+    "costoUF": 140.0,
+    "diferencia": 2709.6,
 
-    }, 
-    {
-        "nombre": "ADICIONALES Y OTROS",
-        "presupuesto:": 809.9,
-        "costo": 4018000,
-        "costoUF": 140.0,
-        "diferencia": 669.9,
-        "presu": 809.9
-    }
-
-
+   "items": [
+        
+        {
+            "nombre": "INSTALACIÓN DE FAENAS",
+            "presupuesto:": 53.0,
+            "costo": 0,
+            "costoUF": 0,
+            "diferencia": 53.0,
+            "presu": 53.0,
+            "items": [
+                {
+                    "descripcion": "Instalacion de faenas casa",
+                    "unidad": null,
+                    "cantidad": 1.00,
+                    "precioUnitario": null,
+                    "puUf": 52.97,
+                    "subtotalUf": null,
+                    "totalUF": 52.97
+                }
+            ]
+        },
+        {
+            "nombre": "TRAZADO Y LIMPIEZA",
+            "presupuesto:": 35.8,
+            "costo": 0,
+            "costoUF": 0,
+            "diferencia": 35.8,
+            "presu": 35.8,
+            "items": [
+                {
+                    "descripcion": "Trazado y niveles",
+                    "unidad": null,
+                    "cantidad": 140.00,
+                    "precioUnitario": null,
+                    "puUf": 0.08,
+                    "subtotalUf": null,
+                    "totalUF": 11.12
+                },
+                {
+                    "descripcion": "Escape y retiro de escombros",
+                    "unidad": null,
+                    "cantidad": 70.00,
+                    "precioUnitario": null,
+                    "puUf": 0.35,
+                    "subtotalUf": null,
+                    "totalUF": 24.72
+                }
+            ]
+        },
+        {
+            "nombre": "OBRA GRUESA",
+            "presupuesto:": 1030.9,
+            "costo": 0,
+            "costoUF": 0,
+            "diferencia": 1030.9,
+            "presu": 1030.9,
+            "items": [
+                {
+                    "descripcion": "Fundaciones",
+                    "unidad": null,
+                    "cantidad": 1.00,
+                    "precioUnitario": null,
+                    "puUf": 195.04,
+                    "subtotalUf": null,
+                    "totalUF": 195.04
+                },
+                {
+                    "descripcion": "Excavaciones",
+                    "unidad": null,
+                    "cantidad": 9.60,
+                    "precioUnitario": null,
+                    "puUf": 1.25,
+                    "subtotalUf": null,
+                    "totalUF": 12.04
+                },
+                {
+                    "descripcion": "Compactación sello",
+                    "unidad": null,
+                    "cantidad": 24.00,
+                    "precioUnitario": null,
+                    "puUf": 1.99,
+                    "subtotalUf": null,
+                    "totalUF": 47.65
+                },
+                {
+                    "descripcion": "Hormigón H-20",
+                    "unidad": null,
+                    "cantidad": 15.00,
+                    "precioUnitario": null,
+                    "puUf": 4.26,
+                    "subtotalUf": null,
+                    "totalUF": 63.86
+                }
+            ]
+        }, 
+        {
+            "nombre": "TERMINACIONES",
+            "presupuesto:": 729.8,
+            "costo": 0,
+            "costoUF": 0,
+            "diferencia": 729.8,
+            "presu": 729.8,
+            "items": [
+                {
+                    "descripcion": "Trazado y niveles",
+                    "unidad": null,
+                    "cantidad": 140.00,
+                    "precioUnitario": null,
+                    "puUf": 0.08,
+                    "subtotalUf": null,
+                    "totalUF": 11.12
+                },
+                {
+                    "descripcion": "Escape y retiro de escombros",
+                    "unidad": null,
+                    "Cantidad": 70.00,
+                    "precioUnitario": null,
+                    "puUf": 0.35,
+                    "subtotalUf": null,
+                    "totalUF": 24.72
+                }
+            ]
+        }, 
+        {
+            "nombre": "PROYECTO ELECTRICO",
+            "presupuesto:": 104.4,
+            "costo": 0,
+            "costoUF": 0,
+            "diferencia": 104.4,
+            "presu": 104.4,
+            "items": [
+                {
+                    "descripcion": "Trazado y niveles",
+                    "unidad": null,
+                    "Cantidad": 140.00,
+                    "precioUnitario": null,
+                    "puUf": 0.08,
+                    "subtotalUf": null,
+                    "totalUF": 11.12
+                },
+                {
+                    "descripcion": "Escape y retiro de escombros",
+                    "unidad": null,
+                    "Cantidad": 70.00,
+                    "precioUnitario": null,
+                    "puUf": 0.35,
+                    "subtotalUf": null,
+                    "totalUF": 24.72
+                }
+            ]
+        }, 
+        {
+            "nombre": "PROYECTO SANITARIO",
+            "presupuesto:": 85.9,
+            "costo": 0,
+            "costoUF": 0,
+            "diferencia": 85.9,
+            "presu": 85.9,
+            "items": [
+                {
+                    "descripcion": "Trazado y niveles",
+                    "unidad": null,
+                    "cantidad": 140.00,
+                    "precioUnitario": null,
+                    "puUf": 0.08,
+                    "subtotalUf": null,
+                    "totalUF": 11.12
+                },
+                {
+                    "descripcion": "Escape y retiro de escombros",
+                    "unidad": null,
+                    "cantidad": 70.00,
+                    "precioUnitario": null,
+                    "puUf": 0.35,
+                    "subtotalUf": null,
+                    "totalUF": 24.72
+                }
+            ]
     
-]
+        }, 
+        {
+            "nombre": "ADICIONALES Y OTROS",
+            "presupuesto:": 809.9,
+            "costo": 4018000,
+            "costoUF": 140.0,
+            "diferencia": 669.9,
+            "presu": 809.9,
+            "items": [
+                {
+                    "descripcion": "Trazado y niveles",
+                    "unidad": null,
+                    "cantidad": 140.00,
+                    "precioUnitario": null,
+                    "puUf": 0.08,
+                    "subtotalUf": null,
+                    "totalUF": 11.12
+                },
+                {
+                    "descripcion": "Escape y retiro de escombros",
+                    "unidad": null,
+                    "cantidad": 70.00,
+                    "precioUnitario": null,
+                    "puUf": 0.35,
+                    "subtotalUf": null,
+                    "totalUF": 24.72
+                }
+            ]
+        }
+    
+    
+        
+    ]
+}
+

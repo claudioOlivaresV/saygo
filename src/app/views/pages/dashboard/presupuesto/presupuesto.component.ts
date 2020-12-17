@@ -16,26 +16,27 @@ export class PresupuestoComponent implements OnInit {
   public groupedBarChartOptions: ChartOptions = {
     responsive: true,
   };
-  public groupedBarChartLabels: Label[] = ['Terminacicones', 'Trazado y limpieza', 'Instalación de faenas', 'Obra gruesa', 'Proyecto electronico', 'Proyecto sanitario', 'Adicionales y otros'];
+  public groupedBarChartLabels: Label[] = []
   public groupedBarChartType: ChartType = 'bar';
   public groupedBarChartData: ChartDataSets[] = [
     {
       label: 'Suma presupuesto',
       backgroundColor: '#727cf5',
-      data: [53.0, 35.8, 1030.9, 729.8, 104.4, 85.9, 809.9]
+      data: []
     },
     {
       label: 'Suma costo UF',
       backgroundColor: '#fbbc06',
-      data: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 140.0]
+      data: []
     },
     {
       label: 'Suma de diferencia',
       backgroundColor: '#b1cfec',
-      data: [53.0, 35.8, 1030.9, 729.8, 104.4, 85.9, 699.9]
+      data: []
     }
   ];
   items: any;
+  presupuesto: any;
 
   status = {
     data: null,
@@ -51,16 +52,48 @@ export class PresupuestoComponent implements OnInit {
 
    getData() {
      this.status.loading = true;
+     this.status.error = false;
      setTimeout(() => {
        this.servicios.getData().toPromise().then((rsp: any) => {
-         this.items = rsp;
+         this.items = rsp.items;
+         const dataPresupuesto = rsp.items.map((data) => {
+          const numeros = data.presu;
+          return numeros;
+         });
+         this.groupedBarChartData[0].data = dataPresupuesto;
+
+         const dataCostoUF  = rsp.items.map((data) => {
+          const numeros = data.costoUF;
+          return numeros;
+         });
+         this.groupedBarChartData[1].data = dataCostoUF;
+
+         const dataDiferencia = rsp.items.map((data) => {
+          const numeros = data.diferencia;
+          return numeros;
+         });
+         this.groupedBarChartData[2].data = dataDiferencia;
+
+         const dataLabels  = rsp.items.map((data) => {
+          const labels = data.nombre;
+          return labels;
+         });
+         this.groupedBarChartLabels = dataLabels;
+         this.presupuesto = rsp;
          console.log(this.items);
          this.status.loading = false;
        }, err => {
         this.status.loading = false;
+        this.status.error = true;
          console.log(err);
        });
      }, 3000);
+  }
+  tryAgain() {
+    this.status.data = false;
+    this.status.loading = false;
+    this.status.error = false;
+    this.getData();
   }
 
 
