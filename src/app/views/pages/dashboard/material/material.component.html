@@ -2,7 +2,32 @@
     <div class="col-md-12 stretch-card">
       <div class="card">
         <div class="card-body">
-          <h6 class="card-title">Material</h6>
+          <div class="row mb-3 mb-md-0">
+            <div class="col-6 col-md-4 col-xl-8">
+                <h6 class="card-title">Materiales</h6>
+            </div>
+           
+            <div class="col-3 col-md-4 col-xl-4">
+              <button type="button" class="btn btn-primary btn-icon-text w-100 d-flex justify-content-center" (click)="solicitudMaterial()">
+              <div>
+                <em class="btn-icon-prepend mr-0 d-block  d-md-none " data-feather="plus-circle" appFeatherIcon></em>
+                <span class="d-none ml-2 d-md-block">Solicitud Material</span> 
+              </div>
+            </button>
+            </div>
+
+        </div>
+        <div class="row my-3">
+          <div class="d-none d-lg-block col-md-6 col-lg-12">
+            <div class="email-search">
+              <div class="input-group input-search">
+                <input class="form-control" type="text" placeholder="Filtrar aquí..."><span class="input-group-btn">
+                <button class="btn btn-outline-secondary" type="button"><i class="feather icon-search"></i></button></span>
+              </div>
+            </div>
+      
+          </div>
+        </div>
           <div class="table-responsive">
             <table id="dataTableExample" class="table">
               <thead>

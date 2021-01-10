@@ -22,6 +22,10 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import { HttpClientModule } from '@angular/common/http';
 import { NuevaObraComponent } from './nueva-obra/nueva-obra.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import { SolicitudMaterialesComponent } from './solicitud-materiales/solicitud-materiales.component';
+import { ArchwizardModule } from 'angular-archwizard';
+import { ServiciosComponent } from './servicios/servicios.component';
+
 
 
 
@@ -33,11 +37,16 @@ const routes: Routes = [
   {
     path: 'detalle',
     component: DetalleObraComponent
-  }
+  },
+  {
+    path: 'servicios',
+    component: ServiciosComponent
+  },
+  
 ]
 
 @NgModule({
-  declarations: [DashboardComponent, DetalleObraComponent, PresupuestoComponent, PartidasComponent, MaterialComponent, FacturaComponent, NuevaObraComponent],
+  declarations: [DashboardComponent, DetalleObraComponent, PresupuestoComponent, PartidasComponent, MaterialComponent, FacturaComponent, NuevaObraComponent, SolicitudMaterialesComponent, ServiciosComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
@@ -51,7 +60,8 @@ const routes: Routes = [
     MatExpansionModule,
     HttpClientModule,
     ReactiveFormsModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    ArchwizardModule
 
   ]
 })

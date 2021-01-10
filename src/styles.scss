@@ -8,3 +8,11 @@
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.swal2-styled.swal2-confirm {
+    border: 0;
+    border-radius: .25em;
+    background: initial;
+    background-color: #727cf5 !important;
+    color: #fff;
+    font-size: 1.0625em;
+}
